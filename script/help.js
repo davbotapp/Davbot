@@ -25,9 +25,9 @@ module.exports.run = async function({
       let page = 1;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `  ✰🌿𝗗𝗔𝗩𝗕𝗢𝗧🌿✰\n  𝚌𝚖ｄ:\nAndroid Download 👉: 
+      let helpMessage = `  ✰🌿𝗗𝗔𝗩𝗕𝗢𝗧🌿✰\n  𝚌𝚖ｄ:\n page bot👉: 
 
-iOS Download 👉: https://apkfab.com/davbot-app/com.wDavbotApp_18522058/apk?h=04b73efa7d2cba68f97c53df0bdbd8ae2cc274f86c8aac466f54b29c129858a6🌿━━━━━━━━━━━━━━🌿\n\n`;
+page bot 👉https://www.facebook.com/profile.php?id=61550884726891: 🌿━━━━━━━━━━━━━━🌿\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
         helpMessage += `🌿\t${i + 1}. ➳ ${prefix}${commands[i]} \n`;
       }
@@ -42,9 +42,9 @@ iOS Download 👉: https://apkfab.com/davbot-app/com.wDavbotApp_18522058/apk?h=0
       const pages = 20;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = ` 🌿Android Download : 👉 https://apkfab.com/davbot-app/com.wDavbotApp_18522058/apk?h=04b73efa7d2cba68f97c53df0bdbd8ae2cc274f86c8aac466f54b29c129858a6
+      let helpMessage = ` 🌿 page bot: 👉 https://www.facebook.com/profile.php?id=61550884726891
 
-iOS Download 👉: https://apkfab.com/davbot-app/com.wDavbotApp_18522058/apk?h=04b73efa7d2cba68f97c53df0bdbd8ae2cc274f86c8aac466f54b29c129858a6✰𝗗𝗔𝗩𝗕𝗢𝗧✰🌿\n 𝚌𝚖ｄ🌿\n━━━━━━━━━━━━━━━\n\n`;
+✰𝗗𝗔𝗩𝗕𝗢𝗧✰🌿\n 𝚌𝚖ｄ🌿\n━━━━━━━━━━━━━━━\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
         helpMessage += `\t${i + 1}. 🌿➳ ${prefix}${commands[i]} \n`;
       }
