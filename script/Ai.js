@@ -13,7 +13,7 @@ module.exports.config = {
 
 module.exports.run = async function({ api, event, args }) {
 		if (!args[0]) {
-				api.sendMessage("vas-y 🤓", event.threadID);
+				api.sendMessage("❓| Pose ta question à Davbot 0.4 🤓", event.threadID);
 				return;
 		}
 
