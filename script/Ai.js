@@ -1,28 +1,31 @@
 
-const axios = require('axios');
+const axios = require("axios");
 
 module.exports.config = {
-  name: 'ai',
-  version: '1.0.0',
+  name: "aihercai",
+  version: "1.0.0",
   role: 0,
-  hasPrefix: false,
-  aliases: ['gpt', 'openai', 'assistant'],
-  description: "Une commande IA avec l'API Hercai",
-  usage: "ai [question]",
-  credits: 'David Mpongo',
-  cooldown: 3,
+  hasPrefix: true,
+  aliases: ["hercai", "ai"],
+  description: "Parle avec une intelligence artificielle",
+  usage: "aihercai [question]",
+  credits: "David Mpongo",
+  cooldown: 3
 };
 
 module.exports.run = async function({ api, event, args }) {
   const question = args.join(" ");
-  if (!question) return api.sendMessage("❌ Veuillez entrer une question.\nExemple : /ai Bonjour !", event.threadID, event.messageID);
+  const { threadID, messageID } = event;
+
+  if (!question)
+    return api.sendMessage("❌ Veuillez poser une question à l'IA.", threadID, messageID);
 
   try {
-    const res = await axios.get(`https://openai-rest-api.vercel.app/hercai?ask=encodeURIComponent(question)   model=v3`);
-    const reply = res.data.reply;
+    const res = await axios.get(`https://ai-chat-gpt-4-lite.onrender.com/api/hercai?question=encodeURIComponent(question)`);
+    const reply = res.data.reply || "❌ Aucune réponse.";
 
-    api.sendMessage(`🤖 Davbot :{reply}`, event.threadID, event.messageID);
+    return api.sendMessage(`🤖 Davbot:{reply}`, threadID, messageID);
   } catch (err) {
-    api.sendMessage("❌ Erreur lors de la requête à l'IA.", event.threadID, event.messageID);
+    return api.sendMessage("⚠️ Erreur lors de la connexion à l'API.", threadID, messageID);
   }
 };
