@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports.config = {
-		name: 'ai',
+		name: 'salut',
 		version: '1.0.0',
 		role: 0,
 		hasPrefix: false,
@@ -13,7 +13,7 @@ module.exports.config = {
 
 module.exports.run = async function({ api, event, args }) {
 		if (!args[0]) {
-				api.sendMessage("❌ Please provide a question or prompt.", event.threadID);
+				api.sendMessage("Salut comment puis-je vous-aidez aujourd'hui ?.", event.threadID);
 				return;
 		}
 
