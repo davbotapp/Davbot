@@ -25,7 +25,7 @@ module.exports.run = async function({
       let page = 1;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `  ✰🌿𝗗𝗔𝗩𝗕𝗢𝗧🌿✰\n  𝚌𝚖ｄ:\n page bot👉: 
+      let helpMessage = `  ✰🌿𝗗𝗔𝗩𝗕𝗢𝗧🌿✰\n  𝚌𝚖ｄ:\n
 
 page bot 👉https://www.facebook.com/profile.php?id=61550884726891: 🌿━━━━━━━━━━━━━━🌿\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
@@ -42,7 +42,7 @@ page bot 👉https://www.facebook.com/profile.php?id=61550884726891: 🌿━━�
       const pages = 20;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = ` 🌿 page bot: 👉 https://www.facebook.com/profile.php?id=61550884726891
+      let helpMessage = ` 
 
 ✰𝗗𝗔𝗩𝗕𝗢𝗧✰🌿\n 𝚌𝚖ｄ🌿\n━━━━━━━━━━━━━━━\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
