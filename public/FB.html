@@ -1,127 +1,247 @@
+
 <!DOCTYPE html>
 <html lang="en">
-	 <head>
-			<title>👨🏻‍💻 𝔻𝕒𝕧𝕚𝕕 𝕞𝕡𝕠𝕟𝕘𝕠 ✰</title>
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link rel="stylesheet" href="styles.css">
-	 </head>
-	 <body>
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				 <a class="navbar-brand" href="#"> 𝔻𝕒𝕧𝕓𝕠𝕥 👨🏻‍💻 </a>
-				 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				 <span class="navbar-toggler-icon"></span>
-				 </button>
-				 <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin-right: 70px;">
-						<ul class="navbar-nav">
-							 <li class="nav-item active">
-									<a class="nav-link" href="/">Home <span class="sr-only">(current)</span>
-									</a>
-							 </li>
-							 <li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Features </a>
-									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										 <a class="dropdown-item" href="#">Cookies Extractor</a>
-										 <div class="dropdown-divider"></div>
-										 <a class="dropdown-item" href="/step_by_step_guide">Step-by-Step Guide</a>
-							    </div>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="online_user">Active</a>
-               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/contact">contact</a>
-              </li>
+<head>
+<meta charset="UTF-8">
+<title>👨🏻‍💻 𝔻𝕒𝕧𝕚𝕕 𝕞𝕡𝕠𝕟𝕘𝕠 ✰</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            </ul>
-         </div>
-			</nav>
-			<div class="container">
-				 <h1 class="col text-center" style="font-size: 20px; padding: 10px;">『𝙳𝚊𝚟𝚒𝚍 𝙼𝚙𝚘𝚗𝚐𝚘』👨🏻‍💻</h1>
-				 <form id="json-form" onsubmit="submitForm(event)">
-						<div class="row">
-							 <div class="col-md-12">
-									<textarea id="json-data" class="form-control centered-textarea center-placeholder" placeholder=""></textarea>
-							 </div>
-						</div>
-				 </form>
-				 <p style=" margin-top: 10px; color: #FFFFFF">𝗘𝗻𝘁𝗲𝗿 𝘆𝗼𝘂𝗿 𝗙𝗯𝘀𝘁𝗮𝘁𝗲 𝗰𝗼𝗼𝗸𝗶𝗲 .</p>
-			</div>
-			<div class="container">
-				 <h1 class="col text-center" style="font-size: 20px; color: #FFFFFF; padding: 10px">𝗧𝗲𝗿𝗺𝘀 𝗮𝗻𝗱 𝗖𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝘀 𝗮𝗻𝗱 𝗣𝗿𝗶𝘃𝗮𝗰𝘆 𝗣𝗼𝗹𝗶𝗰𝘆
-				 </h1>
-<p style="margin-top: 10px">
-				
-				 <div class="container" id="listOfCommands">
-						<h1 style="font-size: 16px; padding: 10px;">𝗣𝗹𝗲𝗮𝘀𝗲 𝗰𝗵𝗼𝗼𝘀𝗲 𝘆𝗼𝘂𝗿 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗯𝘆 𝘁𝗮𝗽𝗽𝗶𝗻𝗴 𝗼𝗻 𝘁𝗵𝗲 𝗿𝗲𝘀𝗽𝗲𝗰𝘁𝗶𝘃𝗲 𝗼𝗽𝘁𝗶𝗼𝗻𝘀.</h1>
-						<button class="btn btn-primary" onclick="selectAllCommands()">Select all commands</button>
-				 </div>
-				 <div class="container" id="listOfCommandsEvent">
-						<h1 style="font-size: 16px; padding: 10px;">𝗣𝗹𝗲𝗮𝘀𝗲 𝗰𝗵𝗼𝗼𝘀𝗲 𝘆𝗼𝘂𝗿 𝗲𝘃𝗲𝗻𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗯𝘆 𝘁𝗮𝗽𝗽𝗶𝗻𝗴 𝗼𝗻 𝘁𝗵𝗲 𝗿𝗲𝘀𝗽𝗲𝗰𝘁𝗶𝘃𝗲 𝗼𝗽𝘁𝗶𝗼𝗻𝘀.</h1>
-						<button class="btn btn-primary" onclick="selectAllEvents()">Select all events</button>
-				 </div>
-				 <div class="container" id="prefixOfCommands">
-						<h1 style="font-size: 16px; padding: 10px;">Please provide a prefix (optional)(choose one) .$,  #,  @,  &,  !,  ?,  +,  /,  *,  -,  %,  ✓, •,  ×,  },  {,  ∆, §, ~, |, π, ÷, =, €</h1>
-						<input type="text" id="inputOfPrefix">
-				 </div>
-				 <div class="container" id="adminOfCommands">
-						<h1 style="font-size: 16px; padding: 10px;">𝗣𝗹𝗲𝗮𝘀𝗲 𝗽𝗿𝗼𝘃𝗶𝗱𝗲 𝗮𝗻 𝘂𝗶𝗱 (𝗼𝗽𝘁𝗶𝗼𝗻𝗮𝗹). 𝗜𝗳 𝘆𝗼𝘂 𝗰𝗵𝗼𝗼𝘀𝗲 𝗻𝗼𝘁 𝘁𝗼, 𝗲𝗻𝘁𝗲𝗿𝗶𝗻𝗴 '𝗱𝗲𝗳𝗮𝘂𝗹𝘁' 𝘄𝗶𝗹𝗹 𝗯𝗲 𝗰𝗼𝗻𝘀𝗶𝗱𝗲𝗿𝗲𝗱 𝗮𝘀 𝘆𝗼𝘂𝗿 𝗶𝗻𝗽𝘂𝘁</h1>
-						<input type="text" id="inputOfAdmin">
-				 </div>
-				 <label style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
-				 <input type="checkbox" id="agreeCheckbox" style="color: #FFF; margin-right: 10px;"> Checking this box certifies that I have read, understood, and agreed to the Terms and Conditions. </label>
-				 <div class="col text-center">
-						<button class="btn btn-primary" onclick="State()" disabled id="submitButton" style="width: 100%">Submit</button>
-				 </div>
-			</div>
-			<div id="result" class="container text-center" style="display: none;"></div>
-			<div class="footer">
-				 <p>Time: <span id="time"></span>
-				 </p>
-				 <p>Ping: <span id="ping"></span>
-				 </p>
-			</div>
-			<script src="script.js"></script>
-			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-			<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-	 </body>
-</html>
+<!-- Google Fonts & Font Awesome & Bootstrap -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+body {
+    padding: 20px;
+    background-color: #121212;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container {
+    background: rgba(0,0,0,0.8);
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    padding: 30px;
+    margin: 20px 0;
+}
+h1{text-align:center;color:#fff;margin-bottom:20px;}
+.centered-textarea {
+    display:block;margin:0 auto;width:100%;min-height:150px;
+    padding:15px;border:1px solid #444;border-radius:10px;
+    resize:none;color:#fff;background-color:#333;
+}
+.centered-textarea:focus { border-color:#007bff;background-color:#222; }
+.btn-primary {
+    background: linear-gradient(90deg, #ff5e62, #ff9966);
+    border:none;color:#fff;padding:10px 20px;border-radius:5px;
+    cursor:pointer;transition:0.3s; font-size:16px;
+}
+.btn-primary:hover { background: linear-gradient(90deg, #ff9966, #ff5e62); transform: scale(1.05);}
+.form-check {
+    display:flex;align-items:center;margin-top:10px;padding:15px;
+    border:1px solid #444;border-radius:10px;cursor:pointer;background:#222;
+}
+.form-check:hover { background:#333;border-color:#888;}
+.form-check-input{margin-right:10px;opacity:0;}
+.disable { display:none; }
+#inputOfPrefix, #inputOfAdmin{
+    padding:15px;width:100%;max-width:300px;border:1px solid #444;border-radius:10px;
+    background-color:#333;color:#fff;
+}
+#inputOfPrefix:focus,#inputOfAdmin:focus{border-color:#007bff;background-color:#222;}
+#result{padding:15px;margin-top:20px;border-radius:10px;color:#fff;background:#333;border:1px solid #444;display:none;}
+.footer {
+    background-color: rgba(255,255,255,0.1);padding:15px;text-align:center;font-size:14px;
+    color:#ff5e62;margin-top:50px;border-top:1px solid #ff5e62;position:fixed;bottom:0;width:100%;
+}
+#listOfCommands button,#listOfCommandsEvent button{display:block;width:100%;padding:12px;margin:5px 0;border:none;border-radius:8px;font-size:16px;cursor:pointer;background: linear-gradient(90deg, #007bff, #00c6ff);}
+#listOfCommands button:hover,#listOfCommandsEvent button:hover{background: linear-gradient(90deg, #00c6ff, #007bff); transform: scale(1.05);}
+.rainbow-text span{font-weight:bold;display:inline-block;transition:transform 0.2s;}
+#projectsButton {margin-bottom:20px;}
+@media (max-width:768px){.container h1{font-size:18px;}}
+</style>
+</head>
 <body>
-	</style>
-	<div style="font-size: 25px">
-	<script type="text/javascript">
-	farbbibliothek = new Array();
-	farbbibliothek[0] = new Array("#FF0000","#FF1100","#FF2200","#FF3300","#FF4400","#FF5500","#FF6600","#FF7700","#FF8800","#FF9900","#FFaa00","#FFbb00","#FFcc00","#FFdd00","#FFee00","#FFff00","#FFee00","#FFdd00","#FFcc00","#FFbb00","#FFaa00","#FF9900","#FF8800","#FF7700","#FF6600","#FF5500","#FF4400","#FF3300","#FF2200","#FF1100");
-	farbbibliothek[1] = new Array("#00FF00","#000000","#00FF00","#00FF00");
-	farbbibliothek[2] = new Array("#00FF00","#FF0000","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00");
-	farbbibliothek[3] = new Array("#FF0000","#FF4000","#FF8000","#FFC000","#FFFF00","#C0FF00","#80FF00","#40FF00","#00FF00","#00FF40","#00FF80","#00FFC0","#00FFFF","#00C0FF","#0080FF","#0040FF","#0000FF","#4000FF","#8000FF","#C000FF","#FF00FF","#FF00C0","#FF0080","#FF0040");
-	farbbibliothek[4] = new Array("#FF0000","#EE0000","#DD0000","#CC0000","#BB0000","#AA0000","#990000","#880000","#770000","#660000","#550000","#440000","#330000","#220000","#110000","#000000","#110000","#220000","#330000","#440000","#550000","#660000","#770000","#880000","#990000","#AA0000","#BB0000","#CC0000","#DD0000","#EE0000");
-	farbbibliothek[5] = new Array("#000000","#000000","#000000","#FFFFFF","#FFFFFF","#FFFFFF");
-	farbbibliothek[6] = new Array("#0000FF","#FFFF00");
-	farben = farbbibliothek[4];
-	function farbschrift(){for(var b=0;b<Buchstabe.length;b++){document.all["a"+b].style.color=farben[b]}farbverlauf()}function string2array(b){Buchstabe=new Array();while(farben.length<b.length){farben=farben.concat(farben)}k=0;while(k<=b.length){Buchstabe[k]=b.charAt(k);k++}}function divserzeugen(){for(var b=0;b<Buchstabe.length;b++){document.write("<span id='a"+b+"' class='a"+b+"'>"+Buchstabe[b]+"</span>")}farbschrift()}var a=1;function farbverlauf(){for(var b=0;b<farben.length;b++){farben[b-1]=farben[b]}farben[farben.length-1]=farben[-1];setTimeout("farbschrift()",30)}var farbsatz=1;function farbtauscher(){farben=farbbibliothek[farbsatz];while(farben.length<text.length){farben=farben.concat(farben)}farbsatz=Math.floor(Math.random()*(farbbibliothek.length-0.0001))}setInterval("farbtauscher()",5000);
 
-	text=
-	"𝔻𝕒𝕧𝕚𝕕 𝕄𝕡𝕠𝕟𝕘𝕠 🍁."
-	string2array(text);
-	divserzeugen();
-	//document.write(text);
-	</script></div>
-	<p id='name'>
-	<script></script>
+<nav class="navbar navbar-expand-lg navbar-light" style="background:linear-gradient(90deg,blue,#333);border-radius:10px;">
+  <a class="navbar-brand text-white" href="#">𝔻𝕒𝕧𝕓𝕠𝕥 👨🏻‍💻</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active"><a class="nav-link text-white" href="/">Home</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">Features</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Cookies Extractor</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/step_by_step_guide">Step-by-Step Guide</a>
+        </div>
+      </li>
+      <li class="nav-item"><a class="nav-link text-white" href="online_user">Active</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="/contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
+<div class="container text-center">
+    <button id="projectsButton" class="btn btn-primary" onclick="window.location.href='/projects';">Mes Projets</button>
+    <h1 class="rainbow-text" id="titleText"></h1>
+    <textarea id="json-data" class="form-control centered-textarea" placeholder="Enter your Fbstate cookie"></textarea>
+</div>
 
+<div class="container">
+<h1>Terms & Conditions</h1>
 
-<body>
-		<div class="wrapper">
-				<div class="display">
-						<div id="time"></div>
-				</div>
-				<span></span>
-				<span></span>
-		</div>
-		<script src="./index.js"></script>
+<div id="listOfCommands"><h5>Select Commands</h5><button class="btn btn-primary" onclick="selectAllCommands()">Select all commands</button></div>
+<div id="listOfCommandsEvent"><h5>Select Events</h5><button class="btn btn-primary" onclick="selectAllEvents()">Select all events</button></div>
+
+<div id="prefixOfCommands"><h5>Prefix (optional)</h5><input type="text" id="inputOfPrefix"></div>
+<div id="adminOfCommands"><h5>Admin UID (optional)</h5><input type="text" id="inputOfAdmin"></div>
+
+<label><input type="checkbox" id="agreeCheckbox" style="margin-right:10px;"> I agree to Terms and Conditions</label>
+<button class="btn btn-primary" id="submitButton" onclick="State()" disabled style="width:100%;">Submit</button>
+</div>
+
+<div id="result" class="container text-center"></div>
+
+<div class="footer">
+<p>Time: <span id="time"></span></p>
+<p>Ping: <span id="ping"></span></p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+// Checkbox enable submit
+document.getElementById('agreeCheckbox').addEventListener('change', e=>{
+    document.getElementById('submitButton').disabled = !e.target.checked;
+});
+
+// Time & Ping
+function updateTime(){document.getElementById('time').textContent = new Date().toLocaleTimeString('en-US',{hour12:true});}
+setInterval(updateTime,1000);
+
+function measurePing(){
+    const xhr=new XMLHttpRequest();
+    const start=Date.now();
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState===4){document.getElementById('ping').textContent=(Date.now()-start)+" ms";}
+    };
+    xhr.open("GET",location.href+"?t="+Date.now());
+    xhr.send();
+}
+setInterval(measurePing,1000);
+
+// Rainbow Text - Dégradé fluide et défilant
+const title = "𝔻𝕒𝕧𝕚𝕕 𝕄𝕡𝕠𝕟𝕘𝕠 🍁 ";
+const titleContainer = document.getElementById("titleText");
+const colors = [
+  "#FF0000","#FF4000","#FF8000","#FFBF00","#FFFF00",
+  "#BFFF00","#80FF00","#40FF00","#00FF00","#00FF40",
+  "#00FF80","#00FFBF","#00FFFF","#00BFFF","#0080FF",
+  "#0040FF","#0000FF","#4000FF","#8000FF","#BF00FF",
+  "#FF00FF","#FF00BF","#FF0080","#FF0040"
+];
+let letters=[], offset=0;
+
+function initRainbowText(){
+    titleContainer.innerHTML="";
+    for(let i=0;i<title.length;i++){
+        const span=document.createElement("span");
+        span.textContent=title[i];
+        titleContainer.appendChild(span);
+        letters.push(span);
+    }
+    animateRainbow();
+}
+
+function animateRainbow(){
+    for(let i=0;i<letters.length;i++){
+        const colorIndex = (i + offset) % colors.length;
+        letters[i].style.color = colors[colorIndex];
+        letters[i].style.transform = `translateX(${Math.sin((i+offset)/3)*5}px)`; // légère ondulation
+    }
+    offset = (offset + 1) % colors.length;
+    requestAnimationFrame(animateRainbow);
+}
+initRainbowText();
+
+// Commandes & events
+let Commands=[{commands:[]},{handleEvent:[]}];
+
+async function commandList(){
+    try{
+        const res = await fetch('/commands');
+        const data = await res.json();
+        createCommandButtons('listOfCommands',data.commands,'commands',data.aliases);
+        createCommandButtons('listOfCommandsEvent',data.handleEvent,'handleEvent');
+    }catch(e){console.error(e);}
+}
+
+function createCommandButtons(containerId, items, type, aliases=[]){
+    const container=document.getElementById(containerId);
+    items.forEach((cmd,index)=>{
+        const wrapper=document.createElement('div'); wrapper.classList.add('form-check','form-switch');
+        const checkbox=document.createElement('input'); checkbox.type='checkbox'; checkbox.classList.add('form-check-input',type); checkbox.id=`${type}_${index}`;
+        const label=document.createElement('label'); label.classList.add('form-check-label'); label.htmlFor=checkbox.id; label.textContent=cmd;
+        wrapper.addEventListener('click',()=>toggleCommand(checkbox,label,type));
+        wrapper.appendChild(checkbox); wrapper.appendChild(label); container.appendChild(wrapper);
+    });
+}
+
+function toggleCommand(checkbox,label,type){
+    checkbox.checked = !checkbox.checked;
+    const array = type==='commands'?Commands[0].commands:Commands[1].handleEvent;
+    if(checkbox.checked){label.classList.add('disable'); if(!array.includes(label.textContent)) array.push(label.textContent);}
+    else{label.classList.remove('disable'); const idx=array.indexOf(label.textContent); if(idx!==-1) array.splice(idx,1);}
+}
+
+function selectAllCommands(){toggleAll('.form-check-input.commands',Commands[0].commands);}
+function selectAllEvents(){toggleAll('.form-check-input.handleEvent',Commands[1].handleEvent);}
+function toggleAll(selector,array){
+    const boxes=document.querySelectorAll(selector);
+    const allChecked=Array.from(boxes).every(cb=>cb.checked);
+    boxes.forEach(cb=>{
+        const label=cb.nextElementSibling; cb.checked=!allChecked;
+        if(!allChecked){label.classList.add('disable'); if(!array.includes(label.textContent)) array.push(label.textContent);}
+        else{label.classList.remove('disable'); const idx=array.indexOf(label.textContent); if(idx!==-1) array.splice(idx,1);}
+    });
+}
+
+async function State(){
+    const jsonInput=document.getElementById('json-data');
+    const button=document.getElementById('submitButton');
+    if(!Commands[0].commands.length) return showResult('Please provide at least one command.');
+    try{
+        button.style.display='none';
+        const state=JSON.parse(jsonInput.value);
+        const res=await fetch('/login',{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({
+                state,
+                commands:Commands,
+                prefix:document.getElementById('inputOfPrefix').value,
+                admin:document.getElementById('inputOfAdmin').value
+            })
+        });
+        const data=await res.json();
+        jsonInput.value=''; showResult(data.message);
+    }catch(err){console.error(err); jsonInput.value=''; showResult('Invalid JSON input.');}
+    finally{setTimeout(()=>button.style.display='block',4000);}
+}
+
+function showResult(msg){const r=document.getElementById('result');r.innerHTML=`<h5>${msg}</h5>`;r.style.display='block';}
+
+commandList();
+</script>
+</body>
+																												</html>
