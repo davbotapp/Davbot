@@ -1,106 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
-	<link rel="icon" href="https://i.imgur.com/AnFWx6c.jpeg" type="image/ico">
-  <link rel="shortcut icon" href="https://i.imgur.com/AnFWx6c.jpeg">
-    <title>➭𝗙𝗕-𝗕𝗢𝗧 🧑‍💻</title>
-    <style>
-        body {
-            font-family: Bahnschrift SemiBold, sans-serif;
-            background: linear-gradient(160deg, #3a0383, #0c062a, #0c062a);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            background: linear-gradient(160deg, #3a0383, #0c062a, #0c062a);
-            padding: 10%;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            width: 90%;
-            max-width: 600px;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 0.5em;
-            background: linear-gradient(330deg, #febb5c, #dd9993, #febb5c, #fd7cb9, #fd7cb9, #fd7cb9, #febb5c, #dd9993, #febb5c, #fd7cb9, #fd7cb9, #febb5c, #fd7cb9, #b24afd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p {
-            font-size: 1em;
-            margin: 1em 0;
-        }
-        .highlight {
-            font-size: 1em;
-            font-weight: bold;
-        }
-        .button {
-            background: linear-gradient(135deg, #6a40fc, #bc48fc, #f86cd3, #fa84ac, #fa919f, #faa27c, #ffb168);
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-size: 1em;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .button:hover {
-            background: linear-gradient(135deg, #6a40fc, #bc48fc, #f86cd3, #fa84ac, #fa919f, #faa27c, #ffb168);
-        }
-        @media (max-width: 600px) {
-            .container {
-                padding: 5%;
-            }
-            h1 {
-                font-size: 1.5em;
-            }
-            p, .highlight, .button {
-                font-size: 0.9em;
-            }
-        }
-        .circular-image {
-			width: 150px;
-			height: 150px;
-			border-radius: 50%;
-			border: 1px solid #ddd;
-			margin: 20px auto;
-			display: block;
-		}
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>➭ FB-BOT 🧑‍💻</title>
+<link rel="icon" type="image/x-icon" href="https://i.imgur.com/AnFWx6c.jpeg">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bahnschrift SemiBold', sans-serif;
+    background: #0c062a;
+    color: white;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Canvas for particles */
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Container */
+.container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background: rgba(20,10,40,0.85);
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(108, 64, 252, 0.7), 0 0 80px rgba(252, 64, 202, 0.5);
+    width: 90%;
+    max-width: 600px;
+    animation: glow 3s ease-in-out infinite alternate;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.03);
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% { box-shadow: 0 0 20px rgba(108, 64, 252, 0.5), 0 0 40px rgba(252, 64, 202, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(108, 64, 252, 0.8), 0 0 80px rgba(252, 64, 202, 0.6); }
+    100% { box-shadow: 0 0 20px rgba(108, 64, 252, 0.5), 0 0 40px rgba(252, 64, 202, 0.3); }
+}
+
+/* Animated Gradient Title */
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    background: linear-gradient(270deg, #febb5c, #dd9993, #fd7cb9, #b24afd, #6a40fc, #febb5c);
+    background-size: 1200% 1200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Highlight text */
+p.highlight {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #febb5c;
+}
+
+/* Buttons with animated gradient */
+.button {
+    display: inline-block;
+    margin: 10px 10px 0 10px;
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(270deg, #6a40fc, #bc48fc, #f86cd3, #fa84ac, #ffb168, #6a40fc);
+    background-size: 600% 600%;
+    animation: gradientBtn 8s ease infinite;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+@keyframes gradientBtn {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Circular Image Pulse */
+.circular-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin: 20px auto;
+    display: block;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 15px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    p, .highlight, .button {
+        font-size: 0.9em;
+    }
+    .circular-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1> FB-BOT</h1>
-        <p class="highlight">You may be wondering why you are here, but you are on the right page to be sent to the automated bot site. Click "explor!" to see the main website immediately.</p>
-        <p>Redirect to Official FB- Davbot Facebook Bot Website!</p><p>credit David MP</p><br>
+<canvas id="particles"></canvas>
+
+<div class="container">
+    <img src="https://i.imgur.com/AnFWx6c.jpeg" alt="FB-BOT Logo" class="circular-image">
+    <h1>FB-BOT</h1>
+    <p class="highlight">You are on the official automated FB bot page. Click below to explore the main website immediately!</p>
+    <p>Redirecting to the Official FB-Davbot Facebook Bot Website!</p>
+    <div>
         <a href="FB.html" class="button">FB Davbot 👌</a>
-          <a href="https://web2apkpro.com/public_download.php?project_id=1135&token=ad0583179b" class="button">𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐚𝐩𝐤</a>
-	    <p>.</p>
-	    
-    <
+        <a href="https://david-mpongo.vercel.app/" class="button">Creator</a>
     </div>
-    <script>
-        window.onload = function() {
-            Swal.fire({
-                title: 'Welcome users!',
-                text: 'Click the button below to continue.',
-               
-                imageWidth: 100,
-                imageHeight: 100,
-                imageAlt: 'Custom image',
-                confirmButtonText: 'Got it!'
-            });
-        };
-    </script>
+</div>
+
+<script>
+// SweetAlert welcome
+window.onload = function() {
+    Swal.fire({
+        title: 'Welcome!',
+        text: 'Click the button below to continue.',
+        imageUrl: 'https://i.imgur.com/AnFWx6c.jpeg',
+        imageWidth: 100,
+        imageHeight: 100,
+        imageAlt: 'FB-BOT Logo',
+        confirmButtonText: 'Got it!'
+    });
+};
+
+// Particles background
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particlesArray = [];
+const colors = ['#6a40fc','#bc48fc','#f86cd3','#fa84ac','#ffb168'];
+
+class Particle {
+    constructor(){
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
+        this.color = colors[Math.floor(Math.random()*colors.length)];
+    }
+    update(){
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if(this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if(this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+    }
+    draw(){
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+        ctx.fill();
+    }
+}
+
+function init(){
+    particlesArray = [];
+    for(let i=0;i<100;i++){
+        particlesArray.push(new Particle());
+    }
+}
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animate);
+}
+
+window.addEventListener('resize',()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init();
+});
+
+init();
+animate();
+</script>
 </body>
-</html>
-￼Enter
+			</html>
